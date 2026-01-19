@@ -83,7 +83,7 @@ struct ContentView: View {
                 .font(.system(size: 80))
                 .foregroundColor(.blue)
 
-            Text("ScrollBrake")
+            Text("scrollbrake26app")
                 .font(.largeTitle)
                 .fontWeight(.bold)
 
@@ -97,7 +97,7 @@ struct ContentView: View {
                 Text("Screen Time Access Required")
                     .font(.headline)
 
-                Text("ScrollBrake needs Screen Time access to monitor and limit app usage. This data stays on your device.")
+                Text("scrollbrake26app needs Screen Time access to monitor and limit app usage. This data stays on your device.")
                     .font(.body)
                     .foregroundColor(.secondary)
                     .multilineTextAlignment(.center)
@@ -120,7 +120,7 @@ struct ContentView: View {
                 .padding(.top, 8)
 
                 if authorizationManager.authorizationStatus == .denied {
-                    Text("Access was denied. Please enable in Settings > Screen Time > ScrollBrake")
+                    Text("Access was denied. Please enable in Settings > Screen Time > scrollbrake26app")
                         .font(.caption)
                         .foregroundColor(.red)
                         .multilineTextAlignment(.center)
@@ -156,7 +156,7 @@ struct HomeView: View {
                 }
                 .padding()
             }
-            .navigationTitle("ScrollBrake")
+            .navigationTitle("scrollbrake26app")
         }
     }
 

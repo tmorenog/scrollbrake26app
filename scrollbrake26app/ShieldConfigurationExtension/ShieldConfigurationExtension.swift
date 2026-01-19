@@ -63,13 +63,13 @@ class ShieldConfigurationExtension: ShieldConfigurationDataSource {
 
             // Subtitle with context
             subtitle: ShieldConfiguration.Label(
-                text: "You've reached your session limit for \(displayName). Open ScrollBrake to continue.",
+                text: "You've reached your session limit for \(displayName). Open scrollbrake26app to continue.",
                 color: .secondaryLabel
             ),
 
             // Primary button - opens our app
             primaryButtonLabel: ShieldConfiguration.Label(
-                text: "Open ScrollBrake",
+                text: "Open scrollbrake26app",
                 color: .white
             ),
 

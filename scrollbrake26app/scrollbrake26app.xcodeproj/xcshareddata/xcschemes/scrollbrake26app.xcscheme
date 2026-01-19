@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A1000000000"
-               BuildableName = "ScrollBrake.app"
-               BlueprintName = "ScrollBrake"
-               ReferencedContainer = "container:ScrollBrake.xcodeproj">
+               BuildableName = "scrollbrake26app.app"
+               BlueprintName = "scrollbrake26app"
+               ReferencedContainer = "container:scrollbrake26app.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -44,9 +44,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A1000000000"
-            BuildableName = "ScrollBrake.app"
-            BlueprintName = "ScrollBrake"
-            ReferencedContainer = "container:ScrollBrake.xcodeproj">
+            BuildableName = "scrollbrake26app.app"
+            BlueprintName = "scrollbrake26app"
+            ReferencedContainer = "container:scrollbrake26app.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -61,9 +61,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A1000000000"
-            BuildableName = "ScrollBrake.app"
-            BlueprintName = "ScrollBrake"
-            ReferencedContainer = "container:ScrollBrake.xcodeproj">
+            BuildableName = "scrollbrake26app.app"
+            BlueprintName = "scrollbrake26app"
+            ReferencedContainer = "container:scrollbrake26app.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

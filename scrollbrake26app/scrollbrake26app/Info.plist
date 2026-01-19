@@ -51,17 +51,17 @@
             <key>CFBundleTypeRole</key>
             <string>Editor</string>
             <key>CFBundleURLName</key>
-            <string>com.scrollbrake.app</string>
+            <string>com.scrollbrake26app.app</string>
             <key>CFBundleURLSchemes</key>
             <array>
-                <string>scrollbrake</string>
+                <string>scrollbrake26app</string>
             </array>
         </dict>
     </array>
 
     <!-- Privacy Descriptions -->
     <key>NSFamilyControlsUsageDescription</key>
-    <string>ScrollBrake needs Screen Time access to monitor and limit your app usage. Your data stays on your device.</string>
+    <string>scrollbrake26app needs Screen Time access to monitor and limit your app usage. Your data stays on your device.</string>
 
     <!-- Background Modes (if needed for future features) -->
     <key>UIBackgroundModes</key>

@@ -23,7 +23,7 @@ class PersistenceManager {
 
     /// The App Group identifier - must match entitlements
     /// Format: group.{bundle-identifier}
-    static let appGroupIdentifier = "group.com.scrollbrake.shared"
+    static let appGroupIdentifier = "group.com.scrollbrake26app.shared"
 
     /// UserDefaults instance using App Group for cross-process sharing
     private let defaults: UserDefaults
