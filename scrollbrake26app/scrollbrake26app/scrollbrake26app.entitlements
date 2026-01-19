@@ -12,7 +12,7 @@
     <!-- Required for sharing data between main app and extensions -->
     <key>com.apple.security.application-groups</key>
     <array>
-        <string>group.com.scrollbrake.shared</string>
+        <string>group.com.scrollbrake26app.shared</string>
     </array>
 </dict>
 </plist>

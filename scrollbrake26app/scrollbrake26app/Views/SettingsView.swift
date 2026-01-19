@@ -139,7 +139,7 @@ struct SettingsView: View {
                 } header: {
                     Text("About")
                 } footer: {
-                    Text("ScrollBrake uses Apple's Screen Time APIs to help you manage your app usage. All data stays on your device.")
+                    Text("scrollbrake26app uses Apple's Screen Time APIs to help you manage your app usage. All data stays on your device.")
                 }
 
                 // Debug Section

@@ -1,8 +1,8 @@
 //
-//  ScrollBrakeApp.swift
-//  ScrollBrake
+//  scrollbrake26appApp.swift
+//  scrollbrake26app
 //
-//  Main app entry point for ScrollBrake - an app that enforces usage limits
+//  Main app entry point for scrollbrake26app - an app that enforces usage limits
 //  on distracting apps using Apple's Screen Time APIs.
 //
 //  IMPORTANT: This app requires:
@@ -15,7 +15,7 @@ import SwiftUI
 import FamilyControls
 
 @main
-struct ScrollBrakeApp: App {
+struct scrollbrake26appApp: App {
     // Authorization manager handles FamilyControls permission
     @StateObject private var authorizationManager = AuthorizationManager.shared
 
