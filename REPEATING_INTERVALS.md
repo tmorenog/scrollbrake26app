@@ -57,7 +57,7 @@ schedule       : intervalStart = activeStart, intervalEnd = activeEnd, repeats: 
 7. **Inactive weekdays**: we don't use one activity per weekday (which could reach 7 per rule). The threshold handler checks `WeeklySchedule.isActive(on:)`.
 8. **Rule change** (new config version): re-arm at once with the new X. The current cycle's usage is dropped, so the child gets a fresh X. That's acceptable.
 
-Everything above except the iOS API calls lives in `BreakScrollCore`, mainly `InterventionEngine` and `ArmingPlan`, and is covered by unit tests (`swift test`).
+Everything above except the iOS API calls lives in `BreakScrollCore`, mainly `InterventionEngine` and `MonitoringNames` (`BreakScrollCore/Sources/BreakScrollCore/Engine/InterventionEngine.swift`), and is covered by unit tests (`swift test`).
 
 ## 4. Questions answered and open
 
