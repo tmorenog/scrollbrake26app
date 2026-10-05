@@ -2,105 +2,97 @@
 //  ShieldActionExtension.swift
 //  ShieldActionExtension
 //
-//  Handles user interactions with the shield overlay buttons.
-//  When the user taps the primary button on the shield, this extension
-//  can open our main app where they can solve the math challenge.
-//
-//  IMPORTANT: Opening the main app from an extension requires:
-//  - The app must have a URL scheme registered
-//  - We use the URL scheme to deep-link into the app
+//  Handles the shield's buttons:
+//  - Primary ("Continue"): starts the pause in the engine, then opens
+//    BreakScroll on iOS 26.5+ (`.openParentalControlsApp`). Earlier iOS can't
+//    open the app from here, so we post a local notification that opens it
+//    and close the shielded app. See SCREEN_TIME_FEASIBILITY.md Q8.
+//  - Secondary ("I'm Done"): records the choice and closes the app; the
+//    shield stays up.
 //
 
-import ManagedSettingsUI
-import ManagedSettings
 import Foundation
+import ManagedSettings
+import UserNotifications
+import BreakScrollCore
 
-/// Extension point for shield action handling
 class ShieldActionExtension: ShieldActionDelegate {
+    private let coordinator = InterventionCoordinator()
 
-    // MARK: - Shield Action Handling
-
-    /// Handle primary button tap on application shield
     override func handle(
         action: ShieldAction,
         for application: ApplicationToken,
         completionHandler: @escaping (ShieldActionResponse) -> Void
     ) {
-        handleShieldAction(action: action, completionHandler: completionHandler)
+        handle(action, completionHandler: completionHandler) { $0.contains(application) }
     }
 
-    /// Handle primary button tap on category shield
-    override func handle(
-        action: ShieldAction,
-        for category: ActivityCategoryToken,
-        completionHandler: @escaping (ShieldActionResponse) -> Void
-    ) {
-        handleShieldAction(action: action, completionHandler: completionHandler)
-    }
-
-    /// Handle primary button tap on web domain shield
     override func handle(
         action: ShieldAction,
         for webDomain: WebDomainToken,
         completionHandler: @escaping (ShieldActionResponse) -> Void
     ) {
-        handleShieldAction(action: action, completionHandler: completionHandler)
+        handle(action, completionHandler: completionHandler) { $0.contains(webDomain) }
     }
 
-    // MARK: - Shared Action Handler
-
-    /// Common handler for all shield actions
-    private func handleShieldAction(
+    override func handle(
         action: ShieldAction,
+        for category: ActivityCategoryToken,
         completionHandler: @escaping (ShieldActionResponse) -> Void
     ) {
+        handle(action, completionHandler: completionHandler) { $0.contains(category) }
+    }
+
+    private func handle(
+        _ action: ShieldAction,
+        completionHandler: @escaping (ShieldActionResponse) -> Void,
+        matching matches: (FamilyActivitySelectionProbe) -> Bool
+    ) {
+        let state = SharedStore.shared.read()
+        let ruleIDs = coordinator.shieldedRuleIDs(in: state, matching: matches)
+
         switch action {
         case .primaryButtonPressed:
-            // User wants to solve the challenge
-            // Open our main app via URL scheme
-
-            // Note: Opening URL from extension is limited
-            // The .defer response tells the system to open the main app
-            // The main app's URL scheme must be registered in Info.plist
-
-            // Mark that shield action was triggered (for the main app to check)
-            let persistence = PersistenceManager.shared
-            persistence.isShieldActive = true
-
-            // Return .defer to let iOS handle opening our app
-            // This requires the app's URL scheme to be properly configured
-            completionHandler(.defer)
+            let copy = ShieldCopy.make(
+                phase: ruleIDs.first.map { state.session(for: $0).phase },
+                usageInterval: nil,
+                mode: state.mode
+            )
+            guard copy.primaryAction == .continueInApp else {
+                completionHandler(.close)
+                return
+            }
+            for ruleID in ruleIDs {
+                coordinator.send(.chooseContinue, ruleID: ruleID)
+            }
+            openBreakScroll(completionHandler)
 
         case .secondaryButtonPressed:
-            // User wants to close the shield overlay (but apps stay blocked)
+            for ruleID in ruleIDs {
+                coordinator.send(.chooseDone, ruleID: ruleID)
+            }
             completionHandler(.close)
 
-        @unknown default:
+        default:
+            // Submenu items (iOS 26.4+) are reserved for "Ask a parent" (Phase 11).
+            completionHandler(.close)
+        }
+    }
+
+    private func openBreakScroll(_ completionHandler: @escaping (ShieldActionResponse) -> Void) {
+        if #available(iOS 26.5, *) {
+            completionHandler(.openParentalControlsApp)
+            return
+        }
+        let content = UNMutableNotificationContent()
+        content.title = "Your break has started"
+        content.body = "Tap to open BreakScroll and finish your pause."
+        let request = UNNotificationRequest(identifier: "breakscroll.continue", content: content, trigger: nil)
+        UNUserNotificationCenter.current().add(request) { error in
+            if let error {
+                Log.shield.error("notification failed: \(error.localizedDescription, privacy: .public)")
+            }
             completionHandler(.close)
         }
     }
 }
-
-// MARK: - Notes on Shield Actions
-/*
- ShieldActionResponse options:
-
- 1. .close
-    - Dismisses the shield overlay
-    - The app remains shielded (blocked)
-    - User can try again later
-
- 2. .defer
-    - Dismisses the shield and defers to the system
-    - iOS will attempt to open the app that handles the action
-    - Requires proper URL scheme configuration
-
- 3. .none
-    - Does nothing (shield stays visible)
-    - Useful if you need to perform some action before responding
-
- To enable "Open ScrollBrake" functionality:
- 1. Register URL scheme "scrollbrake://" in main app's Info.plist
- 2. Handle the URL in the main app's scene delegate or App struct
- 3. The .defer response will trigger iOS to open the URL
-*/
