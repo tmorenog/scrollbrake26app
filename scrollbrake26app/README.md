@@ -1,3 +1,5 @@
+> **Outdated.** This describes the original scrollbrake26app prototype. See [../README.md](../README.md) for BreakScroll.
+
 # ScrollBrake
 
 An iOS app that enforces usage limits on distracting apps using Apple's Screen Time APIs.

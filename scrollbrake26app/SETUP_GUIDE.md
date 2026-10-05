@@ -1,3 +1,5 @@
+> **Outdated.** This describes the original scrollbrake26app prototype. See [../README.md](../README.md) for BreakScroll.
+
 # ScrollBrake - Detailed Setup Guide
 
 This guide walks you through creating the Xcode project from scratch.

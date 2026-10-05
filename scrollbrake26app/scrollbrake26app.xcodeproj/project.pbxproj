@@ -3,74 +3,53 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 77;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		/* Main App Files */
-		A1000001001 /* scrollbrake26appApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000001000 /* scrollbrake26appApp.swift */; };
-		A1000002001 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000002000 /* ContentView.swift */; };
-		A1000003001 /* AppSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000003000 /* AppSelectionView.swift */; };
-		A1000004001 /* MathGateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000004000 /* MathGateView.swift */; };
-		A1000005001 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000005000 /* SettingsView.swift */; };
-		A1000006001 /* AuthorizationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000006000 /* AuthorizationManager.swift */; };
-		A1000007001 /* MonitoringManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000007000 /* MonitoringManager.swift */; };
-		A1000008001 /* ShieldManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000008000 /* ShieldManager.swift */; };
-		A1000009001 /* SessionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000009000 /* SessionState.swift */; };
-		A1000010001 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000010000 /* PersistenceManager.swift */; };
-		A1000011001 /* URLHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000011000 /* URLHandler.swift */; };
-		A1000014001 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1000014000 /* Assets.xcassets */; };
-
-		/* DeviceActivityMonitor Extension */
-		A2000001001 /* DeviceActivityMonitorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000001000 /* DeviceActivityMonitorExtension.swift */; };
-		A2000002001 /* DeviceActivityMonitorExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = A2000000001 /* DeviceActivityMonitorExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		A2000010001 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000010000 /* PersistenceManager.swift */; };
-
-		/* ShieldConfiguration Extension */
-		A3000001001 /* ShieldConfigurationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3000001000 /* ShieldConfigurationExtension.swift */; };
-		A3000002001 /* ShieldConfigurationExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = A3000000001 /* ShieldConfigurationExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		A3000010001 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000010000 /* PersistenceManager.swift */; };
-
-		/* ShieldAction Extension */
-		A4000001001 /* ShieldActionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4000001000 /* ShieldActionExtension.swift */; };
-		A4000002001 /* ShieldActionExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = A4000000001 /* ShieldActionExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		A4000010001 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1000010000 /* PersistenceManager.swift */; };
+		C82DB87B0EBF41A9B6CFF661 /* BreakScrollCore in Frameworks */ = {isa = PBXBuildFile; productRef = 01DCBBE9943781C29972D0DA /* BreakScrollCore */; };
+		BCB6AAAAAF5DC192CF43F966 /* BreakScrollCore in Frameworks */ = {isa = PBXBuildFile; productRef = 125D52776AFBCB4F8B9E27C5 /* BreakScrollCore */; };
+		1F409BE8A10C38C7E4BB3644 /* BreakScrollCore in Frameworks */ = {isa = PBXBuildFile; productRef = 87BF4137FDCBFC3878F4C4BD /* BreakScrollCore */; };
+		00F093C65D6645EFAA440038 /* BreakScrollCore in Frameworks */ = {isa = PBXBuildFile; productRef = B74925E829E035C665A424E9 /* BreakScrollCore */; };
+		A9BB19949875A64D95F8A7CB /* DeviceActivityMonitorExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 3B21D66E8898A996A51BBD83 /* DeviceActivityMonitorExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		3007D483306455CF4150B90C /* ShieldConfigurationExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = D1732E345131CEA53408E081 /* ShieldConfigurationExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		6F887E4394CBFC3A5DC9F2B2 /* ShieldActionExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 300D09F51D0544BC63221905 /* ShieldActionExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		A2000003000 /* PBXContainerItemProxy */ = {
+		711A8A7FA2F23FBA0F2CBB02 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = A0000000001 /* Project object */;
+			containerPortal = 46F86FAA6BBF9AC94A7E4595 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = A2000000000;
+			remoteGlobalIDString = 2CADF57FB5768BB694EC8D80;
 			remoteInfo = DeviceActivityMonitorExtension;
 		};
-		A3000003000 /* PBXContainerItemProxy */ = {
+		E24F8CEF5ADDACEDE0441E19 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = A0000000001 /* Project object */;
+			containerPortal = 46F86FAA6BBF9AC94A7E4595 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = A3000000000;
+			remoteGlobalIDString = A344F8CF2B3B75A66CB3E614;
 			remoteInfo = ShieldConfigurationExtension;
 		};
-		A4000003000 /* PBXContainerItemProxy */ = {
+		E2B7FFE33CE0F80F51CC7E34 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = A0000000001 /* Project object */;
+			containerPortal = 46F86FAA6BBF9AC94A7E4595 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = A4000000000;
+			remoteGlobalIDString = 3CBC41F872315188E8571070;
 			remoteInfo = ShieldActionExtension;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		A1000020000 /* Embed Foundation Extensions */ = {
+		425893CE4AEDF359C5F0F0D7 /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				A2000002001 /* DeviceActivityMonitorExtension.appex in Embed Foundation Extensions */,
-				A3000002001 /* ShieldConfigurationExtension.appex in Embed Foundation Extensions */,
-				A4000002001 /* ShieldActionExtension.appex in Embed Foundation Extensions */,
+				A9BB19949875A64D95F8A7CB /* DeviceActivityMonitorExtension.appex in Embed Foundation Extensions */,
+				3007D483306455CF4150B90C /* ShieldConfigurationExtension.appex in Embed Foundation Extensions */,
+				6F887E4394CBFC3A5DC9F2B2 /* ShieldActionExtension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -78,331 +57,321 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		/* Main App */
-		A1000000001 /* scrollbrake26app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = scrollbrake26app.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		A1000001000 /* scrollbrake26appApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = scrollbrake26appApp.swift; sourceTree = "<group>"; };
-		A1000002000 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		A1000003000 /* AppSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSelectionView.swift; sourceTree = "<group>"; };
-		A1000004000 /* MathGateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathGateView.swift; sourceTree = "<group>"; };
-		A1000005000 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		A1000006000 /* AuthorizationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationManager.swift; sourceTree = "<group>"; };
-		A1000007000 /* MonitoringManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonitoringManager.swift; sourceTree = "<group>"; };
-		A1000008000 /* ShieldManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShieldManager.swift; sourceTree = "<group>"; };
-		A1000009000 /* SessionState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionState.swift; sourceTree = "<group>"; };
-		A1000010000 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
-		A1000011000 /* URLHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLHandler.swift; sourceTree = "<group>"; };
-		A1000012000 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A1000013000 /* scrollbrake26app.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = scrollbrake26app.entitlements; sourceTree = "<group>"; };
-		A1000014000 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-
-		/* DeviceActivityMonitor Extension */
-		A2000000001 /* DeviceActivityMonitorExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = DeviceActivityMonitorExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		A2000001000 /* DeviceActivityMonitorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceActivityMonitorExtension.swift; sourceTree = "<group>"; };
-		A2000004000 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A2000005000 /* DeviceActivityMonitorExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DeviceActivityMonitorExtension.entitlements; sourceTree = "<group>"; };
-
-		/* ShieldConfiguration Extension */
-		A3000000001 /* ShieldConfigurationExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ShieldConfigurationExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		A3000001000 /* ShieldConfigurationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShieldConfigurationExtension.swift; sourceTree = "<group>"; };
-		A3000004000 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A3000005000 /* ShieldConfigurationExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ShieldConfigurationExtension.entitlements; sourceTree = "<group>"; };
-
-		/* ShieldAction Extension */
-		A4000000001 /* ShieldActionExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ShieldActionExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		A4000001000 /* ShieldActionExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShieldActionExtension.swift; sourceTree = "<group>"; };
-		A4000004000 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A4000005000 /* ShieldActionExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ShieldActionExtension.entitlements; sourceTree = "<group>"; };
+		8C38FE2F4E7A2D48C57AD5B7 /* scrollbrake26app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = scrollbrake26app.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B21D66E8898A996A51BBD83 /* DeviceActivityMonitorExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = DeviceActivityMonitorExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		D1732E345131CEA53408E081 /* ShieldConfigurationExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ShieldConfigurationExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		300D09F51D0544BC63221905 /* ShieldActionExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ShieldActionExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		0E9430552DA50F4B516A889F /* Exceptions for "BreakScroll" folder in "scrollbrake26app" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+				BreakScroll.entitlements,
+			);
+			target = EE82A485E83809160375963E /* scrollbrake26app */;
+		};
+		174AC061D30517A2D0D43568 /* Exceptions for "DeviceActivityMonitorExtension" folder in "DeviceActivityMonitorExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+				DeviceActivityMonitorExtension.entitlements,
+			);
+			target = 2CADF57FB5768BB694EC8D80 /* DeviceActivityMonitorExtension */;
+		};
+		1FEE795D0F8CFEEC441C1AD9 /* Exceptions for "ShieldConfigurationExtension" folder in "ShieldConfigurationExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+				ShieldConfigurationExtension.entitlements,
+			);
+			target = A344F8CF2B3B75A66CB3E614 /* ShieldConfigurationExtension */;
+		};
+		20B84D16C7FB628828A0029A /* Exceptions for "ShieldActionExtension" folder in "ShieldActionExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+				ShieldActionExtension.entitlements,
+			);
+			target = 3CBC41F872315188E8571070 /* ShieldActionExtension */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		D7F46F18314FC645D5C89B4B /* BreakScroll */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				0E9430552DA50F4B516A889F,
+			);
+			path = BreakScroll;
+			sourceTree = "<group>";
+		};
+		BD76A5226157EB3511FFF5E2 /* DeviceActivityMonitorExtension */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				174AC061D30517A2D0D43568,
+			);
+			path = DeviceActivityMonitorExtension;
+			sourceTree = "<group>";
+		};
+		B53A31A5DB321F02AF1C9A58 /* ShieldConfigurationExtension */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				1FEE795D0F8CFEEC441C1AD9,
+			);
+			path = ShieldConfigurationExtension;
+			sourceTree = "<group>";
+		};
+		371E4C8DA85D698083313081 /* ShieldActionExtension */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				20B84D16C7FB628828A0029A,
+			);
+			path = ShieldActionExtension;
+			sourceTree = "<group>";
+		};
+		9D10A42589C8F5479091BEBD /* Shared */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Shared;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
 /* Begin PBXFrameworksBuildPhase section */
-		A1000030000 /* Frameworks */ = {
+		AC2D868C702946AFF729E07A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C82DB87B0EBF41A9B6CFF661 /* BreakScrollCore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A2000030000 /* Frameworks */ = {
+		BDD93BFF8E8635437A032CF0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCB6AAAAAF5DC192CF43F966 /* BreakScrollCore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A3000030000 /* Frameworks */ = {
+		F83CC9E1057F8DB88E205CCC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F409BE8A10C38C7E4BB3644 /* BreakScrollCore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A4000030000 /* Frameworks */ = {
+		B87AC5AB61BFFDA588BED128 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00F093C65D6645EFAA440038 /* BreakScrollCore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A0000000000 = {
+		2B731CEFC6751AAE0EC69B98 = {
 			isa = PBXGroup;
 			children = (
-				A1000100000 /* scrollbrake26app */,
-				A2000100000 /* DeviceActivityMonitorExtension */,
-				A3000100000 /* ShieldConfigurationExtension */,
-				A4000100000 /* ShieldActionExtension */,
-				A0000010000 /* Products */,
+				D7F46F18314FC645D5C89B4B /* BreakScroll */,
+				BD76A5226157EB3511FFF5E2 /* DeviceActivityMonitorExtension */,
+				B53A31A5DB321F02AF1C9A58 /* ShieldConfigurationExtension */,
+				371E4C8DA85D698083313081 /* ShieldActionExtension */,
+				9D10A42589C8F5479091BEBD /* Shared */,
+				86024CAD1E83101D97359D73 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		A0000010000 /* Products */ = {
+		86024CAD1E83101D97359D73 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A1000000001 /* scrollbrake26app.app */,
-				A2000000001 /* DeviceActivityMonitorExtension.appex */,
-				A3000000001 /* ShieldConfigurationExtension.appex */,
-				A4000000001 /* ShieldActionExtension.appex */,
+				8C38FE2F4E7A2D48C57AD5B7 /* scrollbrake26app.app */,
+				3B21D66E8898A996A51BBD83 /* DeviceActivityMonitorExtension.appex */,
+				D1732E345131CEA53408E081 /* ShieldConfigurationExtension.appex */,
+				300D09F51D0544BC63221905 /* ShieldActionExtension.appex */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		A1000100000 /* scrollbrake26app */ = {
-			isa = PBXGroup;
-			children = (
-				A1000001000 /* scrollbrake26appApp.swift */,
-				A1000002000 /* ContentView.swift */,
-				A1000110000 /* Views */,
-				A1000120000 /* Managers */,
-				A1000130000 /* Models */,
-				A1000140000 /* Persistence */,
-				A1000150000 /* Extensions */,
-				A1000014000 /* Assets.xcassets */,
-				A1000012000 /* Info.plist */,
-				A1000013000 /* scrollbrake26app.entitlements */,
-			);
-			path = scrollbrake26app;
-			sourceTree = "<group>";
-		};
-		A1000110000 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				A1000003000 /* AppSelectionView.swift */,
-				A1000004000 /* MathGateView.swift */,
-				A1000005000 /* SettingsView.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		A1000120000 /* Managers */ = {
-			isa = PBXGroup;
-			children = (
-				A1000006000 /* AuthorizationManager.swift */,
-				A1000007000 /* MonitoringManager.swift */,
-				A1000008000 /* ShieldManager.swift */,
-			);
-			path = Managers;
-			sourceTree = "<group>";
-		};
-		A1000130000 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				A1000009000 /* SessionState.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		A1000140000 /* Persistence */ = {
-			isa = PBXGroup;
-			children = (
-				A1000010000 /* PersistenceManager.swift */,
-			);
-			path = Persistence;
-			sourceTree = "<group>";
-		};
-		A1000150000 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				A1000011000 /* URLHandler.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
-		A2000100000 /* DeviceActivityMonitorExtension */ = {
-			isa = PBXGroup;
-			children = (
-				A2000001000 /* DeviceActivityMonitorExtension.swift */,
-				A2000004000 /* Info.plist */,
-				A2000005000 /* DeviceActivityMonitorExtension.entitlements */,
-			);
-			path = DeviceActivityMonitorExtension;
-			sourceTree = "<group>";
-		};
-		A3000100000 /* ShieldConfigurationExtension */ = {
-			isa = PBXGroup;
-			children = (
-				A3000001000 /* ShieldConfigurationExtension.swift */,
-				A3000004000 /* Info.plist */,
-				A3000005000 /* ShieldConfigurationExtension.entitlements */,
-			);
-			path = ShieldConfigurationExtension;
-			sourceTree = "<group>";
-		};
-		A4000100000 /* ShieldActionExtension */ = {
-			isa = PBXGroup;
-			children = (
-				A4000001000 /* ShieldActionExtension.swift */,
-				A4000004000 /* Info.plist */,
-				A4000005000 /* ShieldActionExtension.entitlements */,
-			);
-			path = ShieldActionExtension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A1000000000 /* scrollbrake26app */ = {
+		EE82A485E83809160375963E /* scrollbrake26app */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A1000040000 /* Build configuration list for PBXNativeTarget "scrollbrake26app" */;
+			buildConfigurationList = 3721E66B5E3979190D8634E2 /* Build configuration list for PBXNativeTarget "scrollbrake26app" */;
 			buildPhases = (
-				A1000050000 /* Sources */,
-				A1000030000 /* Frameworks */,
-				A1000060000 /* Resources */,
-				A1000020000 /* Embed Foundation Extensions */,
+				780ACE4AA5E88D29D9B64A44 /* Sources */,
+				AC2D868C702946AFF729E07A /* Frameworks */,
+				E5742D013702EF8E367F623C /* Resources */,
+				425893CE4AEDF359C5F0F0D7 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				A2000003001 /* PBXTargetDependency */,
-				A3000003001 /* PBXTargetDependency */,
-				A4000003001 /* PBXTargetDependency */,
+				4C33082846901FCB32C259ED /* PBXTargetDependency */,
+				DF0CA6A739CCFF8D2CAFC3F2 /* PBXTargetDependency */,
+				9DF618E0792C52F5391B1A5B /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				D7F46F18314FC645D5C89B4B /* BreakScroll */,
+				9D10A42589C8F5479091BEBD /* Shared */,
 			);
 			name = scrollbrake26app;
+			packageProductDependencies = (
+				01DCBBE9943781C29972D0DA /* BreakScrollCore */,
+			);
 			productName = scrollbrake26app;
-			productReference = A1000000001 /* scrollbrake26app.app */;
+			productReference = 8C38FE2F4E7A2D48C57AD5B7 /* scrollbrake26app.app */;
 			productType = "com.apple.product-type.application";
 		};
-		A2000000000 /* DeviceActivityMonitorExtension */ = {
+		2CADF57FB5768BB694EC8D80 /* DeviceActivityMonitorExtension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A2000040000 /* Build configuration list for PBXNativeTarget "DeviceActivityMonitorExtension" */;
+			buildConfigurationList = 2F45AAA002D5554322AC2FDF /* Build configuration list for PBXNativeTarget "DeviceActivityMonitorExtension" */;
 			buildPhases = (
-				A2000050000 /* Sources */,
-				A2000030000 /* Frameworks */,
-				A2000060000 /* Resources */,
+				478659DBE0DCA8264ACF56B2 /* Sources */,
+				BDD93BFF8E8635437A032CF0 /* Frameworks */,
+				52A0F3D47D2D1838EAA2109D /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				BD76A5226157EB3511FFF5E2 /* DeviceActivityMonitorExtension */,
+				9D10A42589C8F5479091BEBD /* Shared */,
 			);
 			name = DeviceActivityMonitorExtension;
+			packageProductDependencies = (
+				125D52776AFBCB4F8B9E27C5 /* BreakScrollCore */,
+			);
 			productName = DeviceActivityMonitorExtension;
-			productReference = A2000000001 /* DeviceActivityMonitorExtension.appex */;
+			productReference = 3B21D66E8898A996A51BBD83 /* DeviceActivityMonitorExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
-		A3000000000 /* ShieldConfigurationExtension */ = {
+		A344F8CF2B3B75A66CB3E614 /* ShieldConfigurationExtension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A3000040000 /* Build configuration list for PBXNativeTarget "ShieldConfigurationExtension" */;
+			buildConfigurationList = 61AC06E4844368DB9CCD6654 /* Build configuration list for PBXNativeTarget "ShieldConfigurationExtension" */;
 			buildPhases = (
-				A3000050000 /* Sources */,
-				A3000030000 /* Frameworks */,
-				A3000060000 /* Resources */,
+				8BC453517EDAE88E3C84E846 /* Sources */,
+				F83CC9E1057F8DB88E205CCC /* Frameworks */,
+				0432823F7D6B5F340ADA17FC /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				B53A31A5DB321F02AF1C9A58 /* ShieldConfigurationExtension */,
+				9D10A42589C8F5479091BEBD /* Shared */,
 			);
 			name = ShieldConfigurationExtension;
+			packageProductDependencies = (
+				87BF4137FDCBFC3878F4C4BD /* BreakScrollCore */,
+			);
 			productName = ShieldConfigurationExtension;
-			productReference = A3000000001 /* ShieldConfigurationExtension.appex */;
+			productReference = D1732E345131CEA53408E081 /* ShieldConfigurationExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
-		A4000000000 /* ShieldActionExtension */ = {
+		3CBC41F872315188E8571070 /* ShieldActionExtension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A4000040000 /* Build configuration list for PBXNativeTarget "ShieldActionExtension" */;
+			buildConfigurationList = 9B3098F705383F3FDF149C11 /* Build configuration list for PBXNativeTarget "ShieldActionExtension" */;
 			buildPhases = (
-				A4000050000 /* Sources */,
-				A4000030000 /* Frameworks */,
-				A4000060000 /* Resources */,
+				4D5E248D49EF6F7F5082E707 /* Sources */,
+				B87AC5AB61BFFDA588BED128 /* Frameworks */,
+				840D19EDEBC752D8CA636970 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
+			fileSystemSynchronizedGroups = (
+				371E4C8DA85D698083313081 /* ShieldActionExtension */,
+				9D10A42589C8F5479091BEBD /* Shared */,
+			);
 			name = ShieldActionExtension;
+			packageProductDependencies = (
+				B74925E829E035C665A424E9 /* BreakScrollCore */,
+			);
 			productName = ShieldActionExtension;
-			productReference = A4000000001 /* ShieldActionExtension.appex */;
+			productReference = 300D09F51D0544BC63221905 /* ShieldActionExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		A0000000001 /* Project object */ = {
+		46F86FAA6BBF9AC94A7E4595 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1500;
-				LastUpgradeCheck = 1500;
+				LastSwiftUpdateCheck = 2600;
+				LastUpgradeCheck = 2600;
 				TargetAttributes = {
-					A1000000000 = {
-						CreatedOnToolsVersion = 15.0;
+					EE82A485E83809160375963E = {
+						CreatedOnToolsVersion = 26.0;
 					};
-					A2000000000 = {
-						CreatedOnToolsVersion = 15.0;
+					2CADF57FB5768BB694EC8D80 = {
+						CreatedOnToolsVersion = 26.0;
 					};
-					A3000000000 = {
-						CreatedOnToolsVersion = 15.0;
+					A344F8CF2B3B75A66CB3E614 = {
+						CreatedOnToolsVersion = 26.0;
 					};
-					A4000000000 = {
-						CreatedOnToolsVersion = 15.0;
+					3CBC41F872315188E8571070 = {
+						CreatedOnToolsVersion = 26.0;
 					};
 				};
 			};
-			buildConfigurationList = A0000020000 /* Build configuration list for PBXProject "scrollbrake26app" */;
-			compatibilityVersion = "Xcode 14.0";
+			buildConfigurationList = A1806D8FE767B99D399E13F3 /* Build configuration list for PBXProject "scrollbrake26app" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = A0000000000;
-			productRefGroup = A0000010000 /* Products */;
+			mainGroup = 2B731CEFC6751AAE0EC69B98;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				AECDD3FD019E0B162D706E8B /* XCLocalSwiftPackageReference "../BreakScrollCore" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 86024CAD1E83101D97359D73 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A1000000000 /* scrollbrake26app */,
-				A2000000000 /* DeviceActivityMonitorExtension */,
-				A3000000000 /* ShieldConfigurationExtension */,
-				A4000000000 /* ShieldActionExtension */,
+				EE82A485E83809160375963E /* scrollbrake26app */,
+				2CADF57FB5768BB694EC8D80 /* DeviceActivityMonitorExtension */,
+				A344F8CF2B3B75A66CB3E614 /* ShieldConfigurationExtension */,
+				3CBC41F872315188E8571070 /* ShieldActionExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		A1000060000 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A1000014001 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A2000060000 /* Resources */ = {
+		E5742D013702EF8E367F623C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A3000060000 /* Resources */ = {
+		52A0F3D47D2D1838EAA2109D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A4000060000 /* Resources */ = {
+		0432823F7D6B5F340ADA17FC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		840D19EDEBC752D8CA636970 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -412,129 +381,71 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		A1000050000 /* Sources */ = {
+		780ACE4AA5E88D29D9B64A44 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A1000001001 /* scrollbrake26appApp.swift in Sources */,
-				A1000002001 /* ContentView.swift in Sources */,
-				A1000003001 /* AppSelectionView.swift in Sources */,
-				A1000004001 /* MathGateView.swift in Sources */,
-				A1000005001 /* SettingsView.swift in Sources */,
-				A1000006001 /* AuthorizationManager.swift in Sources */,
-				A1000007001 /* MonitoringManager.swift in Sources */,
-				A1000008001 /* ShieldManager.swift in Sources */,
-				A1000009001 /* SessionState.swift in Sources */,
-				A1000010001 /* PersistenceManager.swift in Sources */,
-				A1000011001 /* URLHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A2000050000 /* Sources */ = {
+		478659DBE0DCA8264ACF56B2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A2000001001 /* DeviceActivityMonitorExtension.swift in Sources */,
-				A2000010001 /* PersistenceManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A3000050000 /* Sources */ = {
+		8BC453517EDAE88E3C84E846 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A3000001001 /* ShieldConfigurationExtension.swift in Sources */,
-				A3000010001 /* PersistenceManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A4000050000 /* Sources */ = {
+		4D5E248D49EF6F7F5082E707 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A4000001001 /* ShieldActionExtension.swift in Sources */,
-				A4000010001 /* PersistenceManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		A2000003001 /* PBXTargetDependency */ = {
+		4C33082846901FCB32C259ED /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = A2000000000 /* DeviceActivityMonitorExtension */;
-			targetProxy = A2000003000 /* PBXContainerItemProxy */;
+			target = 2CADF57FB5768BB694EC8D80 /* DeviceActivityMonitorExtension */;
+			targetProxy = 711A8A7FA2F23FBA0F2CBB02 /* PBXContainerItemProxy */;
 		};
-		A3000003001 /* PBXTargetDependency */ = {
+		DF0CA6A739CCFF8D2CAFC3F2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = A3000000000 /* ShieldConfigurationExtension */;
-			targetProxy = A3000003000 /* PBXContainerItemProxy */;
+			target = A344F8CF2B3B75A66CB3E614 /* ShieldConfigurationExtension */;
+			targetProxy = E24F8CEF5ADDACEDE0441E19 /* PBXContainerItemProxy */;
 		};
-		A4000003001 /* PBXTargetDependency */ = {
+		9DF618E0792C52F5391B1A5B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = A4000000000 /* ShieldActionExtension */;
-			targetProxy = A4000003000 /* PBXContainerItemProxy */;
+			target = 3CBC41F872315188E8571070 /* ShieldActionExtension */;
+			targetProxy = E2B7FFE33CE0F80F51CC7E34 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		/* Project Debug */
-		A0000030001 /* Debug */ = {
+		25F88F53074D44ECE4B1A453 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("DEBUG=1", "$(inherited)");
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
-				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
@@ -542,86 +453,45 @@
 			};
 			name = Debug;
 		};
-		/* Project Release */
-		A0000030002 /* Release */ = {
+		5E62481062E12FB3C636E666 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		/* Main App Debug */
-		A1000040001 /* Debug */ = {
+		32FF56B2DF4D355F72AB0B68 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = scrollbrake26app/scrollbrake26app.entitlements;
+				CODE_SIGN_ENTITLEMENTS = BreakScroll/BreakScroll.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = scrollbrake26app/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = scrollbrake26app;
+				INFOPLIST_FILE = BreakScroll/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "BreakScroll";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks");
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.scrollbrake26app.scrollbrake26app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -631,29 +501,25 @@
 			};
 			name = Debug;
 		};
-		/* Main App Release */
-		A1000040002 /* Release */ = {
+		E22E6B5F04C00E0031F21E5D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = scrollbrake26app/scrollbrake26app.entitlements;
+				CODE_SIGN_ENTITLEMENTS = BreakScroll/BreakScroll.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = scrollbrake26app/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = scrollbrake26app;
+				INFOPLIST_FILE = BreakScroll/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "BreakScroll";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks");
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.scrollbrake26app.scrollbrake26app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -663,8 +529,7 @@
 			};
 			name = Release;
 		};
-		/* DeviceActivityMonitor Debug */
-		A2000040001 /* Debug */ = {
+		050DDC7992F25D3761477348 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = DeviceActivityMonitorExtension/DeviceActivityMonitorExtension.entitlements;
@@ -673,13 +538,9 @@
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DeviceActivityMonitorExtension/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "scrollbrake26app Monitor";
+				INFOPLIST_KEY_CFBundleDisplayName = "BreakScroll Monitor";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks", "@executable_path/../../Frameworks");
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.scrollbrake26app.scrollbrake26app.DeviceActivityMonitorExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -690,8 +551,7 @@
 			};
 			name = Debug;
 		};
-		/* DeviceActivityMonitor Release */
-		A2000040002 /* Release */ = {
+		16BA18E963567B935CD224D3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = DeviceActivityMonitorExtension/DeviceActivityMonitorExtension.entitlements;
@@ -700,13 +560,9 @@
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DeviceActivityMonitorExtension/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "scrollbrake26app Monitor";
+				INFOPLIST_KEY_CFBundleDisplayName = "BreakScroll Monitor";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks", "@executable_path/../../Frameworks");
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.scrollbrake26app.scrollbrake26app.DeviceActivityMonitorExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -717,8 +573,7 @@
 			};
 			name = Release;
 		};
-		/* ShieldConfiguration Debug */
-		A3000040001 /* Debug */ = {
+		95AF8E2A918D523D7FDDB820 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = ShieldConfigurationExtension/ShieldConfigurationExtension.entitlements;
@@ -727,13 +582,9 @@
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ShieldConfigurationExtension/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "scrollbrake26app Shield Config";
+				INFOPLIST_KEY_CFBundleDisplayName = "BreakScroll Shield";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks", "@executable_path/../../Frameworks");
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.scrollbrake26app.scrollbrake26app.ShieldConfigurationExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -744,8 +595,7 @@
 			};
 			name = Debug;
 		};
-		/* ShieldConfiguration Release */
-		A3000040002 /* Release */ = {
+		DA3EF45746910334A6183984 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = ShieldConfigurationExtension/ShieldConfigurationExtension.entitlements;
@@ -754,13 +604,9 @@
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ShieldConfigurationExtension/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "scrollbrake26app Shield Config";
+				INFOPLIST_KEY_CFBundleDisplayName = "BreakScroll Shield";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks", "@executable_path/../../Frameworks");
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.scrollbrake26app.scrollbrake26app.ShieldConfigurationExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -771,8 +617,7 @@
 			};
 			name = Release;
 		};
-		/* ShieldAction Debug */
-		A4000040001 /* Debug */ = {
+		52B29B1878287A95A06E9B16 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = ShieldActionExtension/ShieldActionExtension.entitlements;
@@ -781,13 +626,9 @@
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ShieldActionExtension/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "scrollbrake26app Shield Action";
+				INFOPLIST_KEY_CFBundleDisplayName = "BreakScroll Shield Action";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks", "@executable_path/../../Frameworks");
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.scrollbrake26app.scrollbrake26app.ShieldActionExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -798,8 +639,7 @@
 			};
 			name = Debug;
 		};
-		/* ShieldAction Release */
-		A4000040002 /* Release */ = {
+		E479C30BCF529A7972B7886B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = ShieldActionExtension/ShieldActionExtension.entitlements;
@@ -808,13 +648,9 @@
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ShieldActionExtension/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "scrollbrake26app Shield Action";
+				INFOPLIST_KEY_CFBundleDisplayName = "BreakScroll Shield Action";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks", "@executable_path/../../Frameworks");
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.scrollbrake26app.scrollbrake26app.ShieldActionExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -828,52 +664,78 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A0000020000 /* Build configuration list for PBXProject "scrollbrake26app" */ = {
+		A1806D8FE767B99D399E13F3 /* Build configuration list for PBXProject "scrollbrake26app" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A0000030001 /* Debug */,
-				A0000030002 /* Release */,
+				25F88F53074D44ECE4B1A453 /* Debug */,
+				5E62481062E12FB3C636E666 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A1000040000 /* Build configuration list for PBXNativeTarget "scrollbrake26app" */ = {
+		3721E66B5E3979190D8634E2 /* Build configuration list for PBXNativeTarget "scrollbrake26app" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A1000040001 /* Debug */,
-				A1000040002 /* Release */,
+				32FF56B2DF4D355F72AB0B68 /* Debug */,
+				E22E6B5F04C00E0031F21E5D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A2000040000 /* Build configuration list for PBXNativeTarget "DeviceActivityMonitorExtension" */ = {
+		2F45AAA002D5554322AC2FDF /* Build configuration list for PBXNativeTarget "DeviceActivityMonitorExtension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A2000040001 /* Debug */,
-				A2000040002 /* Release */,
+				050DDC7992F25D3761477348 /* Debug */,
+				16BA18E963567B935CD224D3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A3000040000 /* Build configuration list for PBXNativeTarget "ShieldConfigurationExtension" */ = {
+		61AC06E4844368DB9CCD6654 /* Build configuration list for PBXNativeTarget "ShieldConfigurationExtension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A3000040001 /* Debug */,
-				A3000040002 /* Release */,
+				95AF8E2A918D523D7FDDB820 /* Debug */,
+				DA3EF45746910334A6183984 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A4000040000 /* Build configuration list for PBXNativeTarget "ShieldActionExtension" */ = {
+		9B3098F705383F3FDF149C11 /* Build configuration list for PBXNativeTarget "ShieldActionExtension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A4000040001 /* Debug */,
-				A4000040002 /* Release */,
+				52B29B1878287A95A06E9B16 /* Debug */,
+				E479C30BCF529A7972B7886B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		AECDD3FD019E0B162D706E8B /* XCLocalSwiftPackageReference "../BreakScrollCore" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../BreakScrollCore;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		01DCBBE9943781C29972D0DA /* BreakScrollCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = BreakScrollCore;
+		};
+		125D52776AFBCB4F8B9E27C5 /* BreakScrollCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = BreakScrollCore;
+		};
+		87BF4137FDCBFC3878F4C4BD /* BreakScrollCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = BreakScrollCore;
+		};
+		B74925E829E035C665A424E9 /* BreakScrollCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = BreakScrollCore;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
-	rootObject = A0000000001 /* Project object */;
+	rootObject = 46F86FAA6BBF9AC94A7E4595 /* Project object */;
 }
