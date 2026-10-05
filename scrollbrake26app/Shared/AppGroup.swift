@@ -24,3 +24,10 @@ enum Log {
     static let store = Logger(subsystem: subsystem, category: "store")
     static let app = Logger(subsystem: subsystem, category: "app")
 }
+
+/// The engine's time source. Production uses the system clock; the simulated
+/// device tests replace these to run whole days in milliseconds.
+enum AppClock {
+    static var now: () -> Date = Date.init
+    static var calendar: () -> Calendar = { Calendar.current }
+}

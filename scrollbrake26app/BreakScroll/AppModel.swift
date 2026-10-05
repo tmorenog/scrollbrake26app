@@ -117,7 +117,7 @@ final class AppModel: ObservableObject {
     /// Saves a rule and restarts its monitoring with the new settings.
     func save(_ edited: InterventionRule) {
         var rule = edited
-        rule.updatedAt = Date()
+        rule.updatedAt = AppClock.now()
         rule.updatedBy = mode?.rawValue ?? "local"
         store.mutate { state in
             if let existing = state.rule(rule.id) {
@@ -189,7 +189,7 @@ final class AppModel: ObservableObject {
     }
 
     var todaySummary: DailySummary {
-        let today = WeeklySchedule.dayKey(for: Date(), calendar: .current)
+        let today = WeeklySchedule.dayKey(for: AppClock.now(), calendar: AppClock.calendar())
         let intervals = Dictionary(uniqueKeysWithValues: rules.map { ($0.id, $0.usageInterval) })
         return DailySummary.summarize(state.records.filter { $0.dayKey == today }) { intervals[$0] }
             .first ?? DailySummary(dayKey: today)
@@ -220,7 +220,7 @@ final class AppModel: ObservableObject {
 
     private func tick() {
         refresh()
-        let now = Date()
+        let now = AppClock.now()
         for rule in rules {
             if case .pausing(let until, _) = session(for: rule).phase, now >= until {
                 send(.pauseElapsed, to: rule)

@@ -13,7 +13,7 @@ import BreakScrollCore
 struct InterventionCoordinator {
     var store = SharedStore.shared
     var enforcer = ScreenTimeEnforcer()
-    var calendar = Calendar.current
+    var calendar = AppClock.calendar()
 
     @discardableResult
     func send(_ input: InterventionInput, ruleID: UUID) -> InterventionSession? {
@@ -24,7 +24,7 @@ struct InterventionCoordinator {
 
     /// Use inside an existing `SharedStore.mutate` transaction.
     @discardableResult
-    func apply(_ input: InterventionInput, ruleID: UUID, state: inout SharedState, now: Date = Date()) -> InterventionSession? {
+    func apply(_ input: InterventionInput, ruleID: UUID, state: inout SharedState, now: Date = AppClock.now()) -> InterventionSession? {
         guard let rule = state.rule(ruleID) else {
             Log.engine.error("unknown rule=\(ruleID.uuidString, privacy: .public)")
             return nil
