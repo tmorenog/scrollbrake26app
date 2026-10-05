@@ -209,6 +209,19 @@ final class InterventionEngineTests: XCTestCase {
         XCTAssertEqual(session.continuationsToday, 1)
     }
 
+    func testImDoneAfterRearmFailureKeepsShield() {
+        let engine = makeEngine(rule(pause: 0))
+        var session = started(engine, now: at(9))
+        engine.handle(.thresholdReached(generation: 1), session: &session, now: at(9, 2))
+        engine.handle(.chooseContinue, session: &session, now: at(9, 3))
+        engine.handle(.submitAnswer("23"), session: &session, now: at(9, 4))
+        engine.handle(.armFailed(generation: 2), session: &session, now: at(9, 4))
+        let effects = engine.handle(.chooseDone, session: &session, now: at(9, 5))
+        XCTAssertEqual(kinds(effects), [.stopped])
+        XCTAssertFalse(effects.contains(.removeShield))
+        XCTAssertTrue(session.phase.isShielded)
+    }
+
     func testInitialArmFailureReturnsToInactive() {
         let engine = makeEngine(rule())
         var session = InterventionSession(ruleID: engine.rule.id)
@@ -268,6 +281,17 @@ final class InterventionEngineTests: XCTestCase {
         XCTAssertEqual(session.phase, .shielded(since: at(0, 1, day: 6)))
         engine.handle(.chooseContinue, session: &session, now: at(0, 2, day: 6))
         guard case .challenge = session.phase else { return XCTFail("\(session.phase)") }
+    }
+
+    func testRefreshOnlyRollsTheDay() {
+        let engine = makeEngine(rule(dailyLimit: 600))
+        var session = InterventionSession(ruleID: engine.rule.id)
+        engine.handle(.start, session: &session, now: at(9))
+        engine.handle(.armSucceeded(generation: 1), session: &session, now: at(9))
+        XCTAssertEqual(engine.handle(.refresh, session: &session, now: at(10)), [])
+        XCTAssertEqual(session.phase, .monitoring)
+        engine.handle(.dailyLimitReached, session: &session, now: at(12))
+        XCTAssertEqual(engine.handle(.refresh, session: &session, now: at(8, day: 6)), [.arm(generation: 2, threshold: 120)])
     }
 
     func testEscalationAcrossContinuations() {
@@ -367,6 +391,9 @@ final class InterventionEngineTests: XCTestCase {
         XCTAssertEqual(MonitoringNames.parse(event: MonitoringNames.dailyLimitEvent(ruleID: id)), .dailyLimit(ruleID: id))
         XCTAssertNil(MonitoringNames.parse(event: "com.scrollbrake.sessionLimitReached"))
         XCTAssertNil(MonitoringNames.parse(event: "rule.\(id.uuidString).gX"))
+        XCTAssertEqual(MonitoringNames.parse(activity: MonitoringNames.activity(ruleID: id)), .rule(id))
+        XCTAssertEqual(MonitoringNames.parse(activity: MonitoringNames.dailyLimitActivity(ruleID: id)), .dailyLimit(id))
+        XCTAssertNil(MonitoringNames.parse(activity: "com.scrollbrake.sessionMonitor"))
     }
 
     func testDailySummaryCountsOnlyWhatBreakScrollGenerated() {

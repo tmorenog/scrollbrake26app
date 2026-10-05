@@ -81,6 +81,8 @@ public struct InterventionSession: Codable, Equatable, Sendable {
 public enum InterventionInput: Equatable, Sendable {
     /// Begin enforcing the rule.
     case start
+    /// No-op apart from day rollover. Send when the app comes to the foreground.
+    case refresh
     /// Rule disabled, override started, or authorization revoked.
     case stop
     case armSucceeded(generation: Int)
@@ -148,6 +150,9 @@ public struct InterventionEngine {
                 effects.append(.armDailyLimit(limit))
             }
 
+        case .refresh:
+            break
+
         case .stop:
             session.phase = .inactive
             effects += [.stopMonitoring, .removeShield]
@@ -213,7 +218,7 @@ public struct InterventionEngine {
 
         case .chooseDone:
             switch session.phase {
-            case .shielded, .pausing, .challenge:
+            case .shielded, .pausing, .challenge, .rearmFailed:
                 session.phase = .stopped(at: now)
                 effects.append(record(.stopped, session, now))
             default:
@@ -333,6 +338,21 @@ public enum MonitoringNames {
 
     public static func dailyLimitEvent(ruleID: UUID) -> String {
         "daily.\(ruleID.uuidString).limit"
+    }
+
+    public enum ParsedActivity: Equatable, Sendable {
+        case rule(UUID)
+        case dailyLimit(UUID)
+    }
+
+    public static func parse(activity name: String) -> ParsedActivity? {
+        let parts = name.split(separator: ".")
+        guard parts.count == 2, let ruleID = UUID(uuidString: String(parts[1])) else { return nil }
+        switch parts[0] {
+        case "rule": return .rule(ruleID)
+        case "daily": return .dailyLimit(ruleID)
+        default: return nil
+        }
     }
 
     public enum ParsedEvent: Equatable, Sendable {
