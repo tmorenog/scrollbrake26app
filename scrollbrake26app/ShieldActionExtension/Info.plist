@@ -26,7 +26,7 @@
     <dict>
         <!-- ShieldAction extension point -->
         <key>NSExtensionPointIdentifier</key>
-        <string>com.apple.shieldaction</string>
+        <string>com.apple.ManagedSettings.shield-action-service</string>
         <!-- Principal class is our action handler -->
         <key>NSExtensionPrincipalClass</key>
         <string>$(PRODUCT_MODULE_NAME).ShieldActionExtension</string>
