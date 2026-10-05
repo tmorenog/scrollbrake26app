@@ -236,7 +236,12 @@ private struct WeekdayPicker: View {
             ForEach(ordered, id: \.self) { day in
                 let isOn = days.contains(day)
                 Button {
-                    if isOn { days.remove(day) } else { days.insert(day) }
+                    if isOn {
+                        days.remove(day)
+                    } else {
+                        days.insert(day)
+                    }
+                    return
                 } label: {
                     Text(Calendar.current.veryShortWeekdaySymbols[day.rawValue - 1])
                         .font(.subheadline.weight(.semibold))

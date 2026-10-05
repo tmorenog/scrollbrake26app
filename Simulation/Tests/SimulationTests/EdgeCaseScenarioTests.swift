@@ -264,6 +264,64 @@ final class EdgeCaseScenarioTests: SimulatedDeviceTestCase {
     }
 
     @MainActor
+    func testEditingDuringABreakKeepsTheShield() async {
+        let model = await onboardedModel()
+        var social = rule(apps: [tiktok], interval: 120)
+        model.save(social)
+        XCTAssertEqual(device.use(tiktok, for: 600), 120)
+
+        social.usageInterval = 300
+        model.save(social)
+        XCTAssertTrue(isBlocked(tiktok), "editing must not be a way around a break")
+        guard case .shielded = phase(model, social) else { return XCTFail("\(phase(model, social))") }
+
+        completeIntervention(model, social, app: tiktok)
+        XCTAssertEqual(device.use(tiktok, for: 600), 300, "the new interval applies from the next allowance")
+    }
+
+    @MainActor
+    func testOpeningTheAppRecoversAMissedIntervalStart() async {
+        device.reset(now: date(day: 5, hour: 22, minute: 35), calendar: calendar)
+        let model = await onboardedModel()
+        let social = rule(apps: [tiktok], schedule: .daytime)
+        model.save(social)
+        device.drain()
+        XCTAssertEqual(phase(model, social), .monitoring)
+        device.wake()
+
+        // Next morning the extension's intervalDidStart never arrives.
+        let monitor = device.makeMonitor
+        device.makeMonitor = nil
+        device.now = date(day: 6, hour: 6, minute: 0)
+        device.wake()
+        device.makeMonitor = monitor
+        DeviceActivityMonitorExtension().intervalDidEnd(for: DeviceActivityName(activity(social)))
+        XCTAssertEqual(phase(model, social), .outsideActiveHours)
+        device.now = date(day: 6, hour: 9)
+        device.makeMonitor = nil
+        device.wake()  // 07:00 start delivered to nobody
+        device.makeMonitor = monitor
+        XCTAssertEqual(phase(model, social), .outsideActiveHours)
+
+        model.setActive(true)  // the person opens BreakScroll
+        XCTAssertEqual(phase(model, social), .monitoring)
+        model.setActive(false)
+        XCTAssertEqual(device.use(tiktok, for: 600), 120)
+    }
+
+    @MainActor
+    func testATransientAuthorizationStatusDoesNotLiftShields() async {
+        let model = await onboardedModel()
+        let social = rule(apps: [tiktok])
+        model.save(social)
+        device.use(tiktok, for: 600)
+        AuthorizationCenter.shared.authorizationStatus = .notDetermined
+        AuthorizationCenter.shared.authorizationStatus = .approved
+        XCTAssertTrue(isBlocked(tiktok))
+        guard case .shielded = phase(model, social) else { return XCTFail() }
+    }
+
+    @MainActor
     func testDisablingARuleRemovesItsShieldAndMonitoring() async {
         let model = await onboardedModel()
         var social = rule(apps: [tiktok])

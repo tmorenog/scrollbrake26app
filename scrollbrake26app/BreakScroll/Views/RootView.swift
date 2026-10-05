@@ -9,11 +9,14 @@ struct RootView: View {
     @EnvironmentObject private var model: AppModel
 
     var body: some View {
-        content
-            .fullScreenCover(isPresented: interventionIsActive) {
-                InterventionView()
-                    .environmentObject(model)
-            }
+        // A break replaces everything rather than covering it: a cover can't be
+        // presented over an open sheet (rule editor, passcode, app picker), and
+        // replacing the root also dismisses those sheets.
+        if model.activeIntervention != nil {
+            InterventionView()
+        } else {
+            content
+        }
     }
 
     @ViewBuilder
@@ -30,10 +33,5 @@ struct RootView: View {
                 AuthorizationView(mode: mode)
             }
         }
-    }
-
-    /// The cover follows the engine's phase; the views never dismiss it directly.
-    private var interventionIsActive: Binding<Bool> {
-        Binding(get: { model.activeIntervention != nil }, set: { _ in })
     }
 }

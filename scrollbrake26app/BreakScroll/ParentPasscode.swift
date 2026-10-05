@@ -10,6 +10,7 @@
 //  by them once rules are edited from the parent's phone.
 //
 
+import BreakScrollCore
 import CryptoKit
 import Foundation
 import Security
@@ -39,6 +40,19 @@ enum ParentPasscode {
         let salt = stored.prefix(16)
         return hash(passcode, salt: Data(salt)) == stored.dropFirst(16)
     }
+
+    /// Wrong-guess lockout, kept in the app's own (sandboxed) defaults.
+    static var lockout: PasscodeLockout {
+        get {
+            UserDefaults.standard.data(forKey: lockoutKey)
+                .flatMap { try? JSONDecoder().decode(PasscodeLockout.self, from: $0) } ?? PasscodeLockout()
+        }
+        set {
+            UserDefaults.standard.set(try? JSONEncoder().encode(newValue), forKey: lockoutKey)
+        }
+    }
+
+    private static let lockoutKey = "parentPasscodeLockout"
 
     static func remove() {
         SecItemDelete(baseQuery as CFDictionary)

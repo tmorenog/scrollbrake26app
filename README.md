@@ -45,7 +45,25 @@ Every target builds its own folder plus `Shared/`, and links `BreakScrollCore`. 
 cd BreakScrollCore && swift test
 ```
 
-There are 51 tests. They cover the challenge generator, escalation, schedules, the full repeat loop, stale and duplicate callbacks, midnight rollover, process death during a pause, never unlocking when re-arming fails, the daily cap, sync conflicts and shield wording.
+See **Testing** below.
+
+## Testing
+
+Run these before any device build. They need a Swift 6 toolchain on Linux (the simulation's fake frameworks reuse Apple's module names, so it doesn't build on macOS). The cloud container used for development has one.
+
+| Command | What it checks |
+|---|---|
+| `cd BreakScrollCore && swift test` | 54 tests: the engine, challenges, schedules, escalation, sync merging, shield copy and passcode lockout, plus 300 × 400 random-input runs checking safety invariants after every step |
+| `cd Simulation && swift test` | 30 scenarios on a **simulated iPhone**. The real `Shared/`, extension and `AppModel` sources run against fake Screen Time frameworks that behave as Apple documents. Covers the MVP loop, I'm Done, active hours, midnight, the daily cap, failures, multiple rules, categories, revocation, edits, escalation, crash recovery and a 40-seed, 3-day soak |
+| `python3 tools/validate_project.py` | Extension points, principal classes, entitlements vs the App Group, and project file references |
+
+Mutation testing: 14 deliberately planted bugs (failed re-arm unlocking, counting past usage, missing generation checks, unshielding early, and others) were each caught by these suites.
+
+**What these can't prove**, so it still needs a real iPhone:
+- that the SwiftUI screens compile (they were reviewed against Apple's docs line by line, but never compiled)
+- Apple's actual runtime behavior, especially experiment E1 (restarting monitoring resets usage) and E3 (the parent's picker shows the child's apps).
+
+The simulation assumes Apple's documented behavior. If E1 shows otherwise on a device, the simulation is where to model the real behavior first.
 
 ## Building for a device
 

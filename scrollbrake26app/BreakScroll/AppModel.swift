@@ -71,7 +71,8 @@ final class AppModel: ObservableObject {
         authorizationStatus = status
         // Revoking authorization voids every token (FamilyActivitySelection
         // docs), so the stored selections are useless now.
-        if wasAuthorized && status != .approved {
+        // Only an explicit .denied counts; a transient status must not lift shields.
+        if wasAuthorized && status == .denied {
             Log.app.notice("authorization revoked; stopping all rules")
             stopAll()
         }
@@ -120,10 +121,19 @@ final class AppModel: ObservableObject {
         rule.updatedAt = AppClock.now()
         rule.updatedBy = mode?.rawValue ?? "local"
         store.mutate { state in
-            if let existing = state.rule(rule.id) {
-                rule.version = existing.version + 1
-                coordinator.apply(.stop, ruleID: rule.id, state: &state)
+            guard let existing = state.rule(rule.id) else {
+                state.upsert(rule)
+                if rule.enabled { coordinator.apply(.start, ruleID: rule.id, state: &state) }
+                return
             }
+            rule.version = existing.version + 1
+            // Mid-break edits must not lift the shield (that would be an easy way
+            // around it). The new settings apply when the next allowance is armed.
+            if rule.enabled, existing.enabled, state.session(for: rule.id).phase.isShielded {
+                state.upsert(rule)
+                return
+            }
+            coordinator.apply(.stop, ruleID: rule.id, state: &state)
             state.upsert(rule)
             if rule.enabled {
                 coordinator.apply(.start, ruleID: rule.id, state: &state)
@@ -209,8 +219,12 @@ final class AppModel: ObservableObject {
     func setActive(_ active: Bool) {
         ticker = nil
         guard active else { return }
+        // Also recovers a missed intervalDidStart: inside active hours, a rule
+        // left "outside active hours" goes back to monitoring.
+        let now = AppClock.now()
         for rule in rules where rule.enabled {
-            coordinator.send(.refresh, ruleID: rule.id)
+            let inHours = rule.activeSchedule.isActive(at: now, calendar: AppClock.calendar())
+            coordinator.send(inHours ? .intervalStarted : .refresh, ruleID: rule.id)
         }
         refresh()
         ticker = Timer.publish(every: 1, on: .main, in: .common)

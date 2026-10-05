@@ -3,11 +3,14 @@
 //  BreakScroll
 //
 
+import BreakScrollCore
 import SwiftUI
 
 /// Create or enter the parent passcode that protects rules on a child's iPhone.
 struct PasscodeSheet: View {
     @Environment(\.dismiss) private var dismiss
+    /// False during child setup: the parent must create the passcode.
+    var allowsCancel = true
     let onSuccess: () -> Void
 
     @State private var isCreating = !ParentPasscode.isSet
@@ -22,22 +25,24 @@ struct PasscodeSheet: View {
                 Section {
                     SecureField(prompt, text: $entry)
                         .keyboardType(.numberPad)
-                        .textContentType(.oneTimeCode)
                         .focused($focused)
-                        .onSubmit(submit)
                 } footer: {
                     if let message {
                         Text(message).foregroundStyle(.red)
                     } else if isCreating {
-                        Text("Only a parent should know this. It's needed to change BreakScroll's rules on this iPhone.")
+                        Text(allowsCancel
+                             ? "Only a parent should know this. It's needed to change BreakScroll's rules on this iPhone."
+                             : "Parent: create a passcode now. It's needed to change BreakScroll's rules on this iPhone, so only you should know it.")
                     }
                 }
             }
             .navigationTitle(isCreating ? "Create Parent Passcode" : "Parent Passcode")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
-                ToolbarItem(placement: .cancellationAction) {
-                    Button("Cancel") { dismiss() }
+                if allowsCancel {
+                    ToolbarItem(placement: .cancellationAction) {
+                        Button("Cancel") { dismiss() }
+                    }
                 }
                 ToolbarItem(placement: .confirmationAction) {
                     Button(isCreating && first.isEmpty ? "Next" : "Done", action: submit)
@@ -45,6 +50,7 @@ struct PasscodeSheet: View {
                 }
             }
             .onAppear { focused = true }
+            .interactiveDismissDisabled(!allowsCancel)
         }
     }
 
@@ -59,10 +65,21 @@ struct PasscodeSheet: View {
             return
         }
         if !isCreating {
+            var lockout = ParentPasscode.lockout
+            let now = Date()
+            if lockout.isLocked(at: now), let until = lockout.lockedUntil {
+                message = "Too many tries. Try again \(until.formatted(.relative(presentation: .named)))."
+                entry = ""
+                return
+            }
             if ParentPasscode.verify(entry) {
+                lockout.recordSuccess()
+                ParentPasscode.lockout = lockout
                 onSuccess()
             } else {
-                message = "That passcode isn't right."
+                lockout.recordFailure(at: now)
+                ParentPasscode.lockout = lockout
+                message = lockout.isLocked(at: now) ? "Too many tries. Please wait before trying again." : "That passcode isn't right."
                 entry = ""
             }
             return

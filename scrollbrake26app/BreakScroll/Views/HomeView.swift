@@ -14,6 +14,9 @@ struct HomeView: View {
     @EnvironmentObject private var model: AppModel
     @State private var sheet: Sheet?
     @State private var confirmingDeleteData = false
+    /// On a child's iPhone the parent creates the passcode right after setup,
+    /// before the child could.
+    @State private var passcodeIsSet = ParentPasscode.isSet
 
     private enum ProtectedAction {
         case edit(InterventionRule)
@@ -41,9 +44,9 @@ struct HomeView: View {
                         Label(message, systemImage: "checkmark.circle.fill")
                             .foregroundStyle(.green)
                     }
-                    .task {
+                    .task(id: message) {
                         try? await Task.sleep(for: .seconds(4))
-                        model.unlockMessage = nil
+                        if model.unlockMessage == message { model.unlockMessage = nil }
                     }
                 }
 
@@ -109,12 +112,19 @@ struct HomeView: View {
                     }
                 }
             }
+            .sheet(isPresented: needsParentPasscode) {
+                PasscodeSheet(allowsCancel: false) { passcodeIsSet = true }
+            }
             .confirmationDialog("Delete all BreakScroll data?", isPresented: $confirmingDeleteData, titleVisibility: .visible) {
                 Button("Delete", role: .destructive) { request(.deleteAllData) }
             } message: {
                 Text("This removes your rules and history and stops all breaks on this iPhone.")
             }
         }
+    }
+
+    private var needsParentPasscode: Binding<Bool> {
+        Binding(get: { model.mode == .familyChild && !passcodeIsSet }, set: { _ in })
     }
 
     private var headline: String {

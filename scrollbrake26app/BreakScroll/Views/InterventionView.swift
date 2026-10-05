@@ -22,7 +22,6 @@ struct InterventionView: View {
                     .frame(maxWidth: 520)
             }
         }
-        .interactiveDismissDisabled()
     }
 
     @ViewBuilder
@@ -116,7 +115,7 @@ private struct PauseStep: View {
                 ZStack {
                     Circle().stroke(Color(.tertiarySystemFill), lineWidth: 8)
                     Circle()
-                        .trim(from: 0, to: total > 0 ? 1 - remaining / total : 1)
+                        .trim(from: 0, to: CGFloat(total > 0 ? 1 - remaining / total : 1))
                         .stroke(Color.accentColor, style: StrokeStyle(lineWidth: 8, lineCap: .round))
                         .rotationEffect(.degrees(-90))
                         .animation(reduceMotion ? nil : .linear(duration: 1), value: remaining)
@@ -155,9 +154,7 @@ private struct ChallengeStep: View {
                 .focused($focused)
                 .accessibilityLabel("Answer")
             if showWrong {
-                Text(failedAttempts > 0 && failedAttempts % InterventionEngine.attemptsBeforeNewProblem == 0
-                     ? "Here's a new one to try."
-                     : "Not quite. Try again.")
+                Text(wrongAnswerMessage)
                     .foregroundStyle(.secondary)
             }
             Button(action: submit) {
@@ -177,6 +174,11 @@ private struct ChallengeStep: View {
             .font(.subheadline)
         }
         .onAppear { focused = true }
+    }
+
+    private var wrongAnswerMessage: String {
+        let replaced = failedAttempts > 0 && failedAttempts % InterventionEngine.attemptsBeforeNewProblem == 0
+        return replaced ? "Here's a new one to try." : "Not quite. Try again."
     }
 
     private func submit() {
